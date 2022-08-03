@@ -1,10 +1,10 @@
 import './App.css';
-import UploadFile from './components/uploadFile';
+import AnalyzeImage from './components/AnalyzeImage';
 
 function App() {
   return (
     <div className="App">
-      <UploadFile/>
+      <AnalyzeImage/>
     </div>
   );
 }
