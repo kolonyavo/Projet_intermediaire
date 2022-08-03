@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './all.css';
 import ProcessImage from './ProcessImage';
 import CSS from "csstype";
@@ -16,7 +16,7 @@ export default function AnalyzeImage(){
   }, []);
 
   const element = document.getElementById("fileToUpload");
-  element?.addEventListener("change", function (event: any) {ProcessImage(); }, false);
+  element?.addEventListener("change", function (event) {ProcessImage(); }, false);
 
   const [selectedFile, setSelectedFile] = useState()
   const [preview, setPreview] = useState()
@@ -46,13 +46,13 @@ export default function AnalyzeImage(){
 
 function ProcessImageBoundingBox() {
       Anonlog();
-      var control : any = document.getElementById("fileToUpload");
-      var file = control?.files[0];
+      var uploadFile: HTMLElement|any = document.getElementById("fileToUpload");
+      var file = uploadFile?.files[0];
   
       // Load base64 encoded image for display 
       var reader = new FileReader();
       reader.onload = (function (theFile) {
-          return function (e: any) {
+          return function (e: null|any) {
               //Call Rekognition  
               AWS.config.region = "eu-west-2";  
               var rekognition = new AWS.Rekognition();

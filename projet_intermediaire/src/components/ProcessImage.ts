@@ -16,7 +16,7 @@ export default function ProcessImage() {
             var rekognition = new AWS.Rekognition();
             var params = {
                 Image: {
-                Bytes: e.target.result,
+                Bytes: e.target?.result,
             },
             Attributes: [
             'ALL',
